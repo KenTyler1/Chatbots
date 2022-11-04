@@ -23,8 +23,6 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import FilterListIcon from "@mui/icons-material/FilterList";
 import { visuallyHidden } from "@mui/utils";
 import { DataContext } from "../../Data/DataProvider";
-import ImageList from "@mui/material/ImageList";
-import ImageListItem from "@mui/material/ImageListItem";
 import "./TableProduct.css";
 
 function descendingComparator(a, b, orderBy) {
@@ -66,8 +64,8 @@ const headCells = [
   },
   {
     id: "_id",
-    numeric: false,
-    disablePadding: true,
+    numeric: true,
+    disablePadding: false,
     label: "ID",
   },
   {
@@ -93,6 +91,12 @@ const headCells = [
     numeric: true,
     disablePadding: false,
     label: "Amount",
+  },
+  {
+    id: "Images",
+    numeric: false,
+    disablePadding: true,
+    label: "Images",
   },
 ];
 
@@ -342,6 +346,7 @@ export default function EnhancedTable() {
                       <TableCell align="right">{product.content}</TableCell>
                       <TableCell align="right">${product.price}</TableCell>
                       <TableCell align="right">{product.count}</TableCell>
+                      <TableCell align="right"><img src={product.images[0]} width="100" height="100" alt={product.title}/></TableCell>
                     </TableRow>
                   );
                 })}
