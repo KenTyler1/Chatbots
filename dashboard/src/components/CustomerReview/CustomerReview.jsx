@@ -55,7 +55,7 @@ const CustomerReview = () => {
       }
     },
   };
-  return <div className="CustomerReview">
+  return <div className="CustomerReview" style={{boxSizing: 'unset'}}>
         <Chart options={data.options} series={data.series} type="area" />
   </div>;
 };

@@ -53,7 +53,7 @@ router.delete("/:listId", async (req, res) => {
   }
 });
 
-//Update a post
+//Update a list
 router.patch("/:listId", async (req, res) => {
   try {
     const updatedList = await Lists.updateOne(
@@ -62,7 +62,6 @@ router.patch("/:listId", async (req, res) => {
       { $set: { images: req.body.images} },
       { $set: { description: req.body.description } },
       { $set: { content: req.body.content } },
-      { $set: { sizes: req.body.sizes } },
       { $set: { price: req.body.price } },
       { $set: { count: req.body.count } },
     );

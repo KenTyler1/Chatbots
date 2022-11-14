@@ -14,7 +14,7 @@ const GeneralOptions = (props) => {
     },
     {
       id: 3,
-      name: "Mình muốn đặt tour",
+      name: "Mình muốn xem các tour ",
       handler: props.actionProvider.handleOrder,
     },
     {

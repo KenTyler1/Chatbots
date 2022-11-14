@@ -10,6 +10,7 @@ const Options = (props) => {
         src="https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/0b/30/aa/f9.jpg"
         width={250}
         style={{ borderRadius: 20 }}
+        alt={Image}
       />
       <h1 className="options-header">{props.title}</h1>
       <div className="options-container">

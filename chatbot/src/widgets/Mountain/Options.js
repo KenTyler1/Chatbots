@@ -10,6 +10,7 @@ const Options = (props) => {
         src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/3f/42/82/domaine-saint-bernard.jpg?w=1200&h=-1&s=1"
         width={250}
         style={{ borderRadius: 20 }}
+        alt={Image}
       />
       <h1 className="options-header">{props.title}</h1>
       <div className="options-container">

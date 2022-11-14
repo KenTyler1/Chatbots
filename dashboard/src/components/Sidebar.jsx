@@ -49,7 +49,7 @@ const Sidebar = () => {
                 key={index}
                 onClick={() => setSelected(index)}
               >
-                <Link to={item.a}>
+                <Link to={item.a}  style={{textDecoration: "unset", color: "black"}}>
                   <item.icon />
                   <span>{item.heading}</span>
                 </Link>

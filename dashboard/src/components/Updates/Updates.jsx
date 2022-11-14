@@ -4,7 +4,7 @@ import { UpdatesData } from "../../Data/Data";
 
 const Updates = () => {
   return (
-    <div className="Updates">
+    <div className="Updates"  style={{boxSizing: 'unset'}}>
       {UpdatesData.map((update) => {
         return (
           <div className="update">

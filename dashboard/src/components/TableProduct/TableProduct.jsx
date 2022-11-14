@@ -130,7 +130,7 @@ function EnhancedTableHead(props) {
         {headCells.map((headCell) => (
           <TableCell
             key={headCell.id}
-            align={headCell.numeric ? "right" : "left"}
+            align={headCell.numeric ? "right" : "center"}
             padding={headCell.disablePadding ? "none" : "normal"}
             sortDirection={orderBy === headCell.id ? order : false}
           >
@@ -229,7 +229,7 @@ export default function EnhancedTable() {
   const [rowsPerPage, setRowsPerPage] = React.useState(2);
 
   const value = useContext(DataContext);
-  const [products, setProducts] = value.products;
+  const [products] = value.products;
 
   const handleRequestSort = (event, property) => {
     const isAsc = orderBy === property && order === "asc";
@@ -340,7 +340,7 @@ export default function EnhancedTable() {
                         {product.title}
                       </TableCell>
                       <TableCell align="right">{product._id}</TableCell>
-                      <TableCell align="right" height="50">
+                      <TableCell align="left" height="50">
                         {product.description}
                       </TableCell>
                       <TableCell align="right">{product.content}</TableCell>

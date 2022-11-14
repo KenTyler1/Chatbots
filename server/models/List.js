@@ -5,10 +5,7 @@ const ListSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-  images: {
-    type: Array,
-    required: true,
-  },
+  images: [String],
   description: {
     type: String,
     required: true

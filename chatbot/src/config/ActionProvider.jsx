@@ -266,6 +266,20 @@ class ActionProvider {
 
     this.addMessageToState(message);
   };
+
+  handleOrder = () => {
+    const message = this.createChatBotMessage(
+      "Ok bạn nha, đường dẫn của chúng tôi ở đây",
+      {
+        widget: "viewproducts",
+        loading: true,
+        terminateLoading: true,
+        withAvatar: true,
+      }
+    );
+
+    this.addMessageToState(message);
+  };
   addMessageToState = (message) => {
     this.setState((state) => ({
       ...state,

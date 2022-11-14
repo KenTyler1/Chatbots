@@ -15,6 +15,7 @@ import Recommend from "../widgets/Confirm/Plan/Recommend/Recommend";
 import Rating from "../widgets/Rating/Rating";
 import Beaches from "../widgets/Sea/Sea";
 import Mountain from "../widgets/Mountain/Mountain";
+import DeliveryLink from "../widgets/Link/DeliveryLink"; 
 
 const config = {
   initialMessages: [
@@ -87,6 +88,10 @@ const config = {
     {
       widgetName: "mountain",
       widgetFunc: (props) => <Mountain {...props}/>,
+    },
+    {
+      widgetName: "viewproducts",
+      widgetFunc: () => <DeliveryLink />,
     },
   ],
   botName: "Crazy Bot",
