@@ -30,7 +30,7 @@ export default function Header() {
             </div>
             <ul style={styleMenu}>
                 <li><Link to="/">Home</Link></li>
-                <li><Link to="/products">Products</Link></li>
+                <li><Link to="/products">Tours</Link></li>
                 <li><Links to="footer">About</Links></li>
                 <li><Links to="footer">Contact</Links></li>
                 <li><Link to="#">Login / Register</Link></li>

@@ -8,22 +8,22 @@ function Search() {
         <div name='book' className='search'>
             <div className="container">
                 <div className="left">
-                    <h2>LUXURY INCLUDED VACATIONS FOR TWO PEOPLE</h2>
-                    <p>Come experience the very pinnacle of luxury Caribbean all-inclusive vacations for couples at Sandals Resorts. Our luxury beach resorts, set along the most gorgeous tropical settings and exquisite beaches in Saint Lucia, Jamaica, Antigua, The Bahamas, Grenada, Barbados and Curaçao, feature unlimited gourmet dining, unique bars serving premium liquors and wines, and every land and water sport, including complimentary green fees at our golf resorts and PADI® certified scuba diving at most resorts. If you are planning a wedding, Sandals is the leader in Caribbean destination weddings and honeymoon packages.</p>
+                    <h2>VỊ TRÍ SANG TRỌNG BAO GỒM CHO HAI NGƯỜI</h2>
+                    <p>Hãy đến trải nghiệm đỉnh cao của những kỳ nghỉ trọn gói sang trọng ở vùng Caribê dành cho các cặp đôi tại Sandals Resorts. Các khu nghỉ dưỡng bãi biển sang trọng của chúng tôi, nằm dọc theo khung cảnh nhiệt đới tuyệt đẹp nhất và những bãi biển tinh tế ở Saint Lucia, Jamaica, Antigua, The Bahamas, Grenada, Barbados và Curaçao, có dịch vụ ăn uống dành cho người sành ăn không giới hạn, các quán bar độc đáo phục vụ rượu và rượu hảo hạng, mọi vùng đất và nước thể thao, bao gồm phí đánh gôn miễn phí tại các khu nghỉ dưỡng chơi gôn của chúng tôi và lặn biển có bình dưỡng khí được PADI® chứng nhận tại hầu hết các khu nghỉ dưỡng. Nếu bạn đang lên kế hoạch cho một đám cưới, Sandals là nhà cung cấp hàng đầu trong các gói tiệc cưới và tuần trăng mật tại các điểm đến ở Caribê.</p>
                     <div className="search-col-2">
                         <div className="box">
                             <div>
                                 <img src={Gold} alt="/" style={{ marginRight: '1rem' }} />
                             </div>
                             <div>
-                                <h3>WORLD'S LEADING</h3>
-                                <p>ALL-INCLUSIVE COMPANY FOR 20 YEARS IN-A-ROW</p>
+                                <h3>HÀNG ĐẦU THẾ GIỚI</h3>
+                                <p>CÔNG TY ĐỘC QUYỀN TRONG 20 NĂM IN-A-ROW</p>
                             </div>
                         </div>
                         <div className="box">
                             <div>
-                                <h3>NO ONE INCLUDES MORE</h3>
-                                <p>ALL-INCLUSIVE COMPANY FOR 20 YEARS IN-A-ROW</p>
+                                <h3>KHÔNG CÓ CÔNG TY NÀO CÓ</h3>
+                                <p>CÔNG TY ĐỘC QUYỀN TRONG 20 NĂM LIÊN TIẾP</p>
                                 <button>View Packages</button>
                             </div>
                         </div>
@@ -31,9 +31,9 @@ function Search() {
                 </div>
                 <div className="right">
                     <div className="promo">
-                        <h4 className="save">GET AN ADDITIONAL 7% OFF</h4>
-                        <p className="timer">12 HOURS LEFT!</p>
-                        <p className="offers">VIEW ALL CURRENT OFFERS</p>
+                        <h4 className="save">ĐƯỢC GIẢM THÊM 7%</h4>
+                        <p className="timer">12 TIẾNG SAU</p>
+                        <p className="offers">XEM TẤT CẢ CÁC ƯU ĐÃI HIỆN TẠI</p>
                     </div>
                     <form>
                         <div className="input-wrap">

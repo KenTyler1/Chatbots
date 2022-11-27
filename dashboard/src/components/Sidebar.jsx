@@ -36,7 +36,7 @@ const Sidebar = () => {
         animate={window.innerWidth <= 768 ? `${expanded}` : ""}
       >
         {/* logo */}
-        <div className="logo" >
+        <div className="logo">
           <img src={Logo} alt="logo" />
           <span>BEACHES</span>
         </div>
@@ -49,7 +49,10 @@ const Sidebar = () => {
                 key={index}
                 onClick={() => setSelected(index)}
               >
-                <Link to={item.a}  style={{textDecoration: "unset", color: "black"}}>
+                <Link
+                  to={item.a}
+                  style={{ textDecoration: "unset", color: "black" }}
+                >
                   <item.icon />
                   <span>{item.heading}</span>
                 </Link>
@@ -57,7 +60,7 @@ const Sidebar = () => {
             );
           })}
           {/* signoutIcon */}
-          <div className="menuItem" style={{position: 'fixed'}}>
+          <div className="menuItem" style={{ position: "fixed" }}>
             <UilSignOutAlt />
           </div>
         </div>

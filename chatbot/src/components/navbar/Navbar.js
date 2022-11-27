@@ -47,7 +47,7 @@ function Navbar() {
       </ul>
       <div className="nav-icons">
         <BiSearch className="icon" style={{ marginRight: "1rem" }} />
-        <BsPerson className="icon" />
+        <Links to='/login'><BsPerson className="icon" /></Links>
       </div>
       <div className="hamburger" onClick={handleNav}>
         {!nav ? (
@@ -81,7 +81,7 @@ function Navbar() {
         <div className="mobile-menu-bottom">
           <div className="menu-icons">
             <button>Search</button>
-            <button>Account</button>
+            <button >Account</button>
           </div>
           <div className="social-icons">
             <FaFacebook className="icon" />

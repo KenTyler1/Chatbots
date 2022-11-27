@@ -28,6 +28,7 @@ export default function UpdateProduct() {
     setPrice(result.price);
     setCount(result.count);
   };
+
   const updateProduct = async () => {
     let result = await fetch(`http://localhost:8000/lists/${params.id}`, {
       method: "Put",
@@ -44,12 +45,7 @@ export default function UpdateProduct() {
       },
     });
     result = await result.json();
-    if (result) {
-        alert("Error");
-    }
-    else {
-        alert("Error");
-    }
+    console.log(result);
   }
 
   return (

@@ -24,6 +24,11 @@ router.post("/", async (req, res) => {
     sizes: req.body.sizes,
     price: req.body.price,
     count: req.body.count,
+    time: req.body.time,
+    age: req.body.age,
+    phone: req.body.phone,
+    ticket: req.body.ticket,
+    tour: req.body.tour
   });
   try {
     const savedList = await lists.save();
@@ -56,16 +61,13 @@ router.delete("/:listId", async (req, res) => {
 //Update a list
 router.patch("/:listId", async (req, res) => {
   try {
-    const updatedList = await Lists.updateOne(
-      { _id: req.params.listId },
-      { $set: { title: req.body.title } },
-      { $set: { images: req.body.images} },
-      { $set: { description: req.body.description } },
-      { $set: { content: req.body.content } },
-      { $set: { price: req.body.price } },
-      { $set: { count: req.body.count } },
-    );
-    res.json(updatedList);
+    const id = req.params.listId;
+    const updates = req.body;
+    const options = {new: true}
+    
+    const result = await Lists.findByIdAndUpdate(id, updates, options);
+
+    res.json(result);
   } catch (err) {
     res.json({ message: err });
   }
