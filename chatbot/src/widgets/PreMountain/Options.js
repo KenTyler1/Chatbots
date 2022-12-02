@@ -1,16 +1,13 @@
-import { Link } from "react-router-dom";
+
 
 const Options = (props) => {
   return (
     <div className="options">
       <div className="stats">
-        <p>
-          - Chỉ cần nhấn một nút, bạn có thể di chuyển đến Pillars of Hercules,
-          một khối đá tự nhiên cách Bãi biển Galleon không xa.
-        </p>
+        <p>Miền Saint-Bernard</p>
       </div>
       <img
-        src="https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/07/ae/2d/05.jpg"
+        src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/3f/42/82/domaine-saint-bernard.jpg?w=1200&h=-1&s=1"
         width={250}
         style={{ borderRadius: 20 }}
         alt={Image}
@@ -24,12 +21,7 @@ const Options = (props) => {
               onClick={option.handler}
               key={option.id}
             >
-              <Link
-                to="products/635e97a81447e9f3faff9ad0"
-                style={{ fontSize: 12 }}
-              >
-                {option.name}
-              </Link>
+              {option.name}
             </div>
           );
         })}

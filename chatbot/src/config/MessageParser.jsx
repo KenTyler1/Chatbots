@@ -54,17 +54,43 @@ class MessageParser {
     else if (
       message.includes("biển") ||
       message.includes("sea") ||
-      message.includes("beaches")
+      message.includes("beaches") ||
+      message.includes("tắm biển") ||
+      message.includes("gợi ý đi tắm biển") 
     ) {
       return this.actionProvider.handleBeaches();
     }
     else if (
       message.includes("núi") ||
       message.includes("mount") ||
-      message.includes("mountain")
+      message.includes("mountain") ||
+      message.includes("gợi ý đi leo núi") ||
+      message.includes("leo núi")
     ) {
       return this.actionProvider.handleMountain();
     }
+    else if (
+      message.includes("nghĩ dưỡng") ||
+      message.includes("nghỉ dưỡng") ||
+      message.includes("resort") 
+    ) {
+      return this.actionProvider.handlerResort();
+    }
+    else if (
+      message.includes("tour khác") ||
+      message.includes("du lịch khác") ||
+      message.includes("danh sách khác") 
+    ) {
+      return this.actionProvider.handleOrder();
+    }   
+    else if (
+      message.includes("có hồ bơi") ||
+      message.includes("view đẹp") ||
+      message.includes("ngắm bình minh") ||
+      message.includes("ngắm hoàng hôn") 
+    ) {
+      return this.actionProvider.handleIntroduce5();
+    }   
     else if (
       message.includes("tạm biệt") ||
       message.includes("bye bye") ||

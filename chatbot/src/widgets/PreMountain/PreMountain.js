@@ -1,11 +1,11 @@
 import Options from "./Options";
 
-const Beaches = (props) => {
+const PreviousMountain = (props) => {
   const options = [
     {
       id: 1,
-      name: "Xem chi tiết",
-      handler: props.actionProvider.handleDetailBeaches,
+      name: "Giới thiệu",
+      handler: props.actionProvider.handleDetailMountain,
     },
     {
       id: 2,
@@ -16,4 +16,4 @@ const Beaches = (props) => {
   return <Options options={options} title="Options" {...props} />;
 };
 
-export default Beaches;
+export default PreviousMountain;

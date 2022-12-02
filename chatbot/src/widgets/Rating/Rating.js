@@ -11,12 +11,33 @@ const colors = {
 
 
 function App() {
-  const [currentValue, setCurrentValue] = useState(0);
   const [hoverValue, setHoverValue] = useState(undefined);
   const stars = Array(5).fill(0)
+  const [rating, setRating] = useState(0);
+  const [comment, setComment] = useState("");
+
+  async function addRating() {
+    console.warn(
+      rating,
+      comment
+    );
+
+    let result = await fetch("http://localhost:8000/rating", {
+      method: "post",
+      body: JSON.stringify({
+        rating,
+        comment
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    result = await result.json();
+    alert("Data has been saved");
+  }
 
   const handleClick = value => {
-    setCurrentValue(value)
+    setRating(value)
   }
 
   const handleMouseOver = newHoverValue => {
@@ -35,27 +56,34 @@ function App() {
         {stars.map((_, index) => {
           return (
             <FaStar
+              type="text"
               key={index}
               size={20}
               onClick={() => handleClick(index + 1)}
               onMouseOver={() => handleMouseOver(index + 1)}
               onMouseLeave={handleMouseLeave}
-              color={(hoverValue || currentValue) > index ? colors.orange : colors.grey}
+              color={(hoverValue || rating) > index ? colors.orange : colors.grey}
               style={{
                 marginRight: 10,
                 cursor: "pointer"
               }}
+              value={rating}
+              onChange={(e) => setRating(e.target.value)}
             />
           )
         })}
       </div>
       <textarea
+        type='text'
         placeholder="What's your experience?"
         style={styles.textarea}
+        value={comment}
+        onChange={e => setComment(e.target.value)}
       />
 
       <button
         style={styles.button}
+        onClick={addRating}
       >
         Submit
       </button>

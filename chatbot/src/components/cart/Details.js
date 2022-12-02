@@ -45,7 +45,7 @@ export default function Details() {
           />
           <div className="box-details">
             <h2 title={product.title}>{product.title}</h2>
-            <h3>${product.price}</h3>
+            <h3>${product.price} một người</h3>
             <h4>Khoảng thời gian: {product.time}</h4>
             <h4>Tuổi: {product.age}</h4>
             <Sizes sizes={product.sizes} />

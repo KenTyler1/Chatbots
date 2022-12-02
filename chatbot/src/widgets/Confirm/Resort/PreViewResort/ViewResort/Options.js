@@ -1,17 +1,18 @@
-import { Link } from "react-router-dom";
+import {Link} from 'react-router-dom';
+
 
 const Options = (props) => {
   return (
     <div className="options">
       <div className="stats">
         <p>
-          Nằm trong công viên với những khu vườn kiểng tươi tốt ở Trung Tâm
-          Thành Phố trên Khu Ga Xe Lửa Cũ
+          Phú Quốc—một hòn đảo cát trắng bình dị gần biên giới Campuchia—có cả
+          vẻ đẹp tự nhiên lẫn ý nghĩa văn hóa.
         </p>
       </div>
       <div>
         <img
-          src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/26/b9/93/58/caption.jpg?w=1100&h=-1&s=1"
+          src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/42/71/da/vinpearl-resort-spa-phu.jpg?w=1200&h=-1&s=1"
           width={250}
           style={{ borderRadius: 20 }}
           alt={Image}
@@ -26,12 +27,7 @@ const Options = (props) => {
               onClick={option.handler}
               key={option.id}
             >
-              <Link
-                to="products/6384628d50f379737b888c80"
-                style={{ fontSize: 12 }}
-              >
-                {option.name}
-              </Link>
+              <Link to="/products/63863fb293228713acd8b32c">{option.name}</Link>
             </div>
           );
         })}

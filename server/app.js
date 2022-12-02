@@ -14,9 +14,12 @@ app.use(bodyParser.json());
 //Import Routes
 const postsRoute = require('./routes/posts');
 const listRoute = require('./routes/lists');
+const ratingRoute = require('./routes/rating');
 app.use('/posts',postsRoute);
 app.use('/lists', listRoute);
+app.use('/rating', ratingRoute);
 
+const Lists = require("./models/List");
 // Connect to DB
 async function connect() {
     try {
@@ -38,7 +41,14 @@ app.get("/", (req, res) => {
   res.send("Hello world");
 });
 
-
+app.get("/search/:key", async (req, res) => {
+  let data = await Lists.find({
+    "%or": [
+     {description: {$regex:req.params.key}}
+    ]
+  })
+  res.send(data);
+});
 //How to we start listening to the server
 app.listen(port, () => {
   console.log("Running");

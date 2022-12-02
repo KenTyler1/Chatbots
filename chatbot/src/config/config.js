@@ -1,4 +1,3 @@
-// Config starter code
 import { createChatBotMessage } from "react-chatbot-kit";
 import Overview from "../widgets/Overview";
 import CoBotAvatar from "../imagechatbot/CoBotAvatar";
@@ -16,12 +15,24 @@ import Rating from "../widgets/Rating/Rating";
 import Beaches from "../widgets/Sea/Sea";
 import Mountain from "../widgets/Mountain/Mountain";
 import DeliveryLink from "../widgets/Link/DeliveryLink"; 
+import Story from '../widgets/Story/Story';
+import MoreStory from "../widgets/Story/More/MoreStory";
+import Continue from "../widgets/Story/More/Continue/Continue";
+import PreExplore from "../widgets/Confirm/PreExplore/PreExplore";
+import PreResort from "../widgets/Confirm/PreResort/PreResort";
+import PreviousSea from "../widgets/PreSea/PreSea";
+import PreviousMountain from "../widgets/PreMountain/PreMountain";
+import PreViewResort from "../widgets/Confirm/Resort/PreViewResort/PreViewResort";
+import ViewResort from "../widgets/Confirm/Resort/PreViewResort/ViewResort/ViewResort";
+import PreRisky from "../widgets/Confirm/PreRisky/PreRisky";
+import Recommend1 from "../widgets/Confirm/PreRisky/Recommend/Recommend";
 
 const config = {
   initialMessages: [
-    createChatBotMessage(`Chào bạn, tôi là AI. Rất vui được hỗ trợ bạn.`),
+    createChatBotMessage(`Chào mừng bạn đến với BEACHES. Nơi sẽ giúp cho chuyến đi du lịch của bạn trở nên dễ dàng và vui vẻ hơn.`),
+    createChatBotMessage(`Tôi xin tự giới thiệu, tôi là CrazyBot. Một trí tuệ nhân tạo được BEACHES tạo ra nhằm mục đích hỗ trợ bạn 24/7.`),
     createChatBotMessage(
-      "Mùa đông đến rồi bạn đã chuẩn bị gì cho 1 chuyến đi du lịch đầy ấm áp cho mùa đông này chưa ?",
+      "Bạn đã chuẩn bị gì cho 1 chuyến đi du lịch đầy niềm vui và ấm áp này chưa ?",
       {
         withAvatar: false,
         delay: 400,
@@ -51,11 +62,11 @@ const config = {
     },
     {
       widgetName: "explore",
-      widgetFunc: (props) => <Explore {...props} />,
+      widgetFunc: (props) => <PreExplore {...props} />,
     },
     {
       widgetName: "resort",
-      widgetFunc: (props) => <Resort {...props} />,
+      widgetFunc: (props) => <PreResort {...props} />,
     },
     {
       widgetName: "back",
@@ -83,15 +94,59 @@ const config = {
     },
     {
       widgetName: "beaches",
-      widgetFunc: (props) => <Beaches {...props}/>,
+      widgetFunc: (props) => <PreviousSea {...props}/>,
     },
     {
       widgetName: "mountain",
-      widgetFunc: (props) => <Mountain {...props}/>,
+      widgetFunc: (props) => <PreviousMountain {...props}/>,
     },
     {
       widgetName: "viewproducts",
       widgetFunc: () => <DeliveryLink />,
+    },
+    {
+      widgetName: "story",
+      widgetFunc: (props) => <Story {...props} />,
+    },    
+    {
+      widgetName: "morestory",
+      widgetFunc: (props) => <MoreStory {...props} />,
+    },
+    {
+      widgetName: "continue",
+      widgetFunc: (props) => <Continue {...props} />,
+    },
+    {
+      widgetName: "introduction",
+      widgetFunc: (props) => <Explore {...props} />,
+    },
+    {
+      widgetName: "introduction1",
+      widgetFunc: (props) => <Resort {...props} />,
+    },  
+    {
+      widgetName: "introduction2",
+      widgetFunc: (props) => <Beaches {...props} />,
+    },
+    {
+      widgetName: "introduction3",
+      widgetFunc: (props) => <Mountain {...props} />,
+    },
+    {
+      widgetName: "viewresort",
+      widgetFunc: (props) => <PreViewResort {...props} />,
+    },    
+    {
+      widgetName: "introresort",
+      widgetFunc: (props) => <ViewResort {...props} />,
+    },
+    {
+      widgetName: "viewresort",
+      widgetFunc: (props) => <PreRisky {...props} />,
+    },
+    {
+      widgetName: "viewresort1",
+      widgetFunc: (props) => <Recommend1 {...props} />,
     },
   ],
   botName: "Crazy Bot",

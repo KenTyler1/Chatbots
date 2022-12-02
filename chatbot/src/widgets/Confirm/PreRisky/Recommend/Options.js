@@ -5,18 +5,17 @@ const Options = (props) => {
     <div className="options">
       <div className="stats">
         <p>
-          Nằm trong công viên với những khu vườn kiểng tươi tốt ở Trung Tâm
-          Thành Phố trên Khu Ga Xe Lửa Cũ
+          • Ngôi nhà của những Rondoval "Original‟, đã được tân trang lại để có
+          phòng tắm lớn hơn với vòi sen trên cao. Những phòng trong khu vườn đã
+          được nâng cấp lộng lẫy với khu bảo tồn hồ bơi riêng.
         </p>
       </div>
-      <div>
-        <img
-          src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/26/b9/93/58/caption.jpg?w=1100&h=-1&s=1"
-          width={250}
-          style={{ borderRadius: 20 }}
-          alt={Image}
-        />
-      </div>
+      <img
+        src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/16/37/aa/5c/sandals-grande-antigua.jpg?w=1200&h=-1&s=1"
+        width={250}
+        style={{ borderRadius: 20 }}
+        alt={Image}
+      />
       <h1 className="options-header">{props.title}</h1>
       <div className="options-container">
         {props.options.map((option) => {
@@ -26,12 +25,7 @@ const Options = (props) => {
               onClick={option.handler}
               key={option.id}
             >
-              <Link
-                to="products/6384628d50f379737b888c80"
-                style={{ fontSize: 12 }}
-              >
-                {option.name}
-              </Link>
+              <Link to="/products/638315b2f5ac696a2e61e5f7">{option.name}</Link>
             </div>
           );
         })}

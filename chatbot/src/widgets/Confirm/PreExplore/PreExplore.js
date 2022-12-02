@@ -4,8 +4,8 @@ const Explore = (props) => {
   const options = [
     {
       id: 1,
-      name: "Chi tiết tour",
-      handler: props.actionProvider.handleOrderExplore,
+      name: "Giới thiệu",
+      handler: props.actionProvider.handleIntroduction,
     },
     {
       id: 2,

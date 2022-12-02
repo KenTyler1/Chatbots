@@ -8,7 +8,7 @@ const DeliveryLink = () => {
   };
 
   return (
-    <Link url={getUrl()} title={"List of tours"} />
+    <Link url={getUrl()} title={"Danh sách các tour"} />
   );
 };
 

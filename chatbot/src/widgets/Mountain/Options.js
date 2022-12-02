@@ -4,10 +4,13 @@ const Options = (props) => {
   return (
     <div className="options">
       <div className="stats">
-        <p>Domaine Saint-Bernard</p>
+        <p>
+          Nhận một chuyến tham quan rộng lớn của Lac Tremblant chỉ trong một giờ
+          trên du thuyền trên hồ này từ khu nghỉ mát Tremblant.
+        </p>
       </div>
       <img
-        src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/3f/42/82/domaine-saint-bernard.jpg?w=1200&h=-1&s=1"
+        src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/26/7a/b6/e7/mont-tremblant-lake-cruise.jpg?w=1200&h=-1&s=1"
         width={250}
         style={{ borderRadius: 20 }}
         alt={Image}
@@ -21,12 +24,7 @@ const Options = (props) => {
               onClick={option.handler}
               key={option.id}
             >
-              <Link
-                to="products/635e97a81447e9f3faff9ad2"
-                style={{ fontSize: 12 }}
-              >
-                {option.name}
-              </Link>
+              <Link to="/products/6388a3c3b2f38fed85728b23">{option.name}</Link>
             </div>
           );
         })}

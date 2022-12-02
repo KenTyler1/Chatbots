@@ -4,7 +4,13 @@ const Options = (props) => {
   return (
     <div className="options">
       <div className="stats">
-        <p>Emerald Bay Sunset Boat tour in the Grateful Red</p>
+        <p>
+          - Nâng cao yếu tố lãng mạn trong chuyến đi đến Hồ Tahoe với dịch vụ thuê
+          thuyền riêng này. 
+          &nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          - Bỏ lại đám đông phía sau bằng cách dong buồm trên
+          một chiếc thuyền trang nhã.
+        </p>
       </div>
       <img
         src="https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/07/92/f6/49.jpg"

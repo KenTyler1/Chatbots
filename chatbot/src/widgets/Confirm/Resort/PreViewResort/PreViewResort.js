@@ -1,11 +1,11 @@
 import Options from "./Options";
 
-const Resort = (props) => {
+const PreViewResort = (props) => {
   const options = [
     {
       id: 1,
-      name: "Xem chi tiết",
-      handler: props.actionProvider.handleOrderResort,
+      name: "Giới thiệu",
+      handler: props.actionProvider.handleIntroduce4,
     },
     {
       id: 2,
@@ -16,4 +16,4 @@ const Resort = (props) => {
   return <Options options={options} title="Options" {...props} />;
 };
 
-export default Resort;
+export default PreViewResort;

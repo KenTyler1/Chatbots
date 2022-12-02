@@ -42,7 +42,7 @@ function Navbar() {
           <li>Views</li>
         </Link>
         <Links to="/products">
-          <li>Tours</li>
+          <li>Tours list</li>
         </Links>
       </ul>
       <div className="nav-icons">
@@ -75,7 +75,7 @@ function Navbar() {
             <li>Views</li>
           </Link>
           <Links to="/products">
-            <li>Tours</li>
+            <li>Tours list</li>
           </Links>
         </ul>
         <div className="mobile-menu-bottom">

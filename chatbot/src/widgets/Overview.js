@@ -22,6 +22,11 @@ const GeneralOptions = (props) => {
       name: "Liên hệ với chúng tôi",
       handler: props.actionProvider.handleContact,
     },
+    {
+      id: 5,
+      name: "Lịch sử hình thành BEACHES",
+      handler: props.actionProvider.handleHistory,
+    }
   ];
   return <Options options={options} title="Options" {...props} />;
 };

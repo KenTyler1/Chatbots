@@ -1,11 +1,11 @@
 import Options from "./Options";
 
-const Explore = (props) => {
+const Recommend = (props) => {
   const options = [
     {
       id: 1,
       name: "Chi tiết tour",
-      handler: props.actionProvider.handleOrderExplore,
+      handler: props.actionProvider.handlerDetail,
     },
     {
       id: 2,
@@ -16,4 +16,4 @@ const Explore = (props) => {
   return <Options options={options} title="Options" {...props}/>;
 };
 
-export default Explore;
+export default Recommend;

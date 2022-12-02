@@ -14,23 +14,133 @@ class ActionProvider {
     this.stateRef = stateRef;
     this.createCustomMessage = createCustomMessage;
   }
+  handleHistory = () => {
+    const message = this.createChatBotMessage(
+      "BEACHES, là một công ty du lịch trực tuyến của Việt Nam điều hành một trang web có nội dung do người dùng tạo và một trang web so sánh mua sắm. Nó cũng cung cấp dịch vụ đặt các tour, đặt phòng khách sạn trực tuyến và đặt chỗ cho phương tiện đi lại, chỗ ở, trải nghiệm du lịch và nhà hàng. Trụ sở chính của nó ở Việt Nam.",
+      {
+        widget: "story",
+        loading: true,
+        terminateLoading: true,
+        withAvatar: true,
+      }
+    );
+
+    this.addMessageToState(message);
+  };
+
+  handleMore = () => {
+    const message = this.createChatBotMessage(
+      "BEACHES được thành lập bởi Stephen Kaufer, Langley Steinert, Nick Shanny và Thomas Palka vào tháng 2 năm 2000.",
+      {
+        widget: "morestory",
+        loading: true,
+        terminateLoading: true,
+        withAvatar: true,
+      }
+    );
+
+    this.addMessageToState(message);
+  };
+
+  handleContinue = () => {
+    const message = this.createChatBotMessage(
+      "BEACHES được thành lập bởi Stephen Kaufer, Langley Steinert, Nick Shanny và Thomas Palka vào tháng 2 năm 2000.",
+      {
+        widget: "continue",
+        loading: true,
+        terminateLoading: true,
+        withAvatar: true,
+      }
+    );
+
+    this.addMessageToState(message);
+  };
+
+  handleStopHere = () => {
+    const message = this.createChatBotMessage(
+      "Cám ơn bạn bạn đã xem qua lịch sử hình thành của công ty BEACHES. Tôi xin gửi bản tham khảo một vài địa điểm nha. Chúc bạn có một chuyển đi đầy thú vị.",
+      {
+        widget: "confirm",
+        loading: true,
+        terminateLoading: true,
+        withAvatar: true,
+      }
+    );
+
+    this.addMessageToState(message);
+  };
+
+  handleIntroduction = () => {
+    const message = this.createChatBotMessage(
+      "CUỘC PHIÊU LƯU LẶN VỚI ỐNG THỞ Ở BÃI BIỂN RÙA chỉ với $124.",
+      {
+        widget: "introduction",
+        loading: true,
+        terminateLoading: true,
+        withAvatar: true,
+      }
+    );
+
+    this.addMessageToState(message);
+  };
+
+  handleIntroduction1 = () => {
+    const message = this.createChatBotMessage(
+      "KHU NGHỈ DƯỠNG MERCURE ĐÀ LẠT chỉ với $126.68",
+      {
+        widget: "introduction1",
+        loading: true,
+        terminateLoading: true,
+        withAvatar: true,
+      }
+    );
+
+    this.addMessageToState(message);
+  };
+  handleIntroduce = () => {
+    const message = this.createChatBotMessage(
+      "Chuyến tham quan bằng thuyền ngắm hoàng hôn trên vịnh EMERALD trong GRATEFUL RED chỉ với $650 ",
+      {
+        widget: "introduction2",
+        loading: true,
+        terminateLoading: true,
+        withAvatar: true,
+      }
+    );
+
+    this.addMessageToState(message);
+  };
+
+  handleDetailMountain = () => {
+    const message = this.createChatBotMessage(
+      "DU THUYỀN HỒ MONT-TREMBLANT chỉ với $26.85 ",
+      {
+        widget: "introduction3",
+        loading: true,
+        terminateLoading: true,
+        withAvatar: true,
+      }
+    );
+
+    this.addMessageToState(message);
+  };
 
   handleWelcome = () => {
     var hi = [
-          "Xin chào, tôi là Crazy Bot. Tôi có thể giúp gì cho bạn ?",
-          "Chắc hẳng bạn phải tuyệt vọng lắm mới tìm đến chúng tôi để hỗ trợ. Tôi có thể hỗ trợ gì được cho bạn nè =))",
-          "Hello bạn nha, bạn cần được chúng tôi hỗ trợ gì nè hihi ",
-          "Hi bạn, mọi thắc mắc của bạn sẽ được tôi giải đáp hết tất cả cho bạn. Bạn có câu hỏi gì nè ?",
-          "Hí bạn nhen, hôm nay là một ngày đẹp chời ha. Hông biết bạn có muốn đi chơi vào hôm nay hông ?",
-          "Chào mừng bạn đến với bình nguyên vô tận =)), tôi là CrazyBot rất zui đc hỗ trợ cho bạn. Bạn cần gì ở chúng tôi ?",
-        ];
-    
-        var randomHi = hi[Math.floor(Math.random() * hi.length)];
-    
-        const message = this.createChatBotMessage(randomHi);
-    
-        this.addMessageToState(message);
-  }
+      "Xin chào, tôi là Crazy Bot. Tôi có thể giúp gì cho bạn ?",
+      "Chắc hẳng bạn phải tuyệt vọng lắm mới tìm đến chúng tôi để hỗ trợ. Tôi có thể hỗ trợ gì được cho bạn nè =))",
+      "Hello bạn nha, bạn cần được chúng tôi hỗ trợ gì nè hihi ",
+      "Hi bạn, mọi thắc mắc của bạn sẽ được tôi giải đáp hết tất cả cho bạn. Bạn có câu hỏi gì nè ?",
+      "Hí bạn nhen, hôm nay là một ngày đẹp chời ha. Hông biết bạn có muốn đi chơi vào hôm nay hông ?",
+      "Chào mừng bạn đến với bình nguyên vô tận =)), tôi là CrazyBot rất zui đc hỗ trợ cho bạn. Bạn cần gì ở chúng tôi ?",
+    ];
+
+    var randomHi = hi[Math.floor(Math.random() * hi.length)];
+
+    const message = this.createChatBotMessage(randomHi);
+
+    this.addMessageToState(message);
+  };
 
   handleConfirm = () => {
     const message = this.createChatBotMessage(
@@ -59,6 +169,20 @@ class ActionProvider {
 
     this.addMessageToState(message);
   };
+
+  handlerRisky = () => {
+    const message = this.createChatBotMessage(
+      "BEACHES xin gửi bạn tham khảo một địa điểm nha",
+      {
+        widget: "risky",
+        loading: true,
+        terminateLoading: true,
+        withAvatar: true,
+      }
+    );
+
+    this.addMessageToState(message);
+  }
 
   handleSayNo = () => {
     var no = [
@@ -129,7 +253,7 @@ class ActionProvider {
         loading: true,
         terminateLoading: true,
         withAvatar: true,
-      },
+      }
     );
     this.addMessageToState(message);
   };
@@ -142,7 +266,7 @@ class ActionProvider {
         loading: true,
         terminateLoading: true,
         withAvatar: true,
-      },
+      }
     );
     this.addMessageToState(message);
   };
@@ -155,7 +279,7 @@ class ActionProvider {
         loading: true,
         terminateLoading: true,
         withAvatar: true,
-      },
+      }
     );
     this.addMessageToState(message);
   };
@@ -168,7 +292,7 @@ class ActionProvider {
         loading: true,
         terminateLoading: true,
         withAvatar: true,
-      },
+      }
     );
     this.addMessageToState(message);
   };
@@ -181,7 +305,7 @@ class ActionProvider {
         loading: true,
         terminateLoading: true,
         withAvatar: true,
-      },
+      }
     );
     this.addMessageToState(message);
   };
@@ -194,7 +318,7 @@ class ActionProvider {
         loading: true,
         terminateLoading: true,
         withAvatar: true,
-      },
+      }
     );
     this.addMessageToState(message);
   };
@@ -207,7 +331,7 @@ class ActionProvider {
         loading: true,
         terminateLoading: true,
         withAvatar: true,
-      },
+      }
     );
     this.addMessageToState(message);
   };
@@ -219,12 +343,12 @@ class ActionProvider {
         loading: true,
         terminateLoading: true,
         withAvatar: true,
-      },
+      }
     );
     this.addMessageToState(message);
   };
 
-  handleMountain= () => {
+  handleMountain = () => {
     const message = this.createChatBotMessage(
       "BEACHES xin gửi bạn tham khảo một địa điểm nha",
       {
@@ -236,7 +360,7 @@ class ActionProvider {
     );
 
     this.addMessageToState(message);
-  }
+  };
   // handleBye = () => {
   //   var bye = [
   //     "Hẹn gặp lại bạn sau nha.",
@@ -280,6 +404,47 @@ class ActionProvider {
 
     this.addMessageToState(message);
   };
+  handleIntroduce4 = () => {
+    const message = this.createChatBotMessage(
+      "VINPEARL RESORT & SPA PHÚ QUỐC chỉ với $59.68",
+      {
+        widget: "introresort",
+        loading: true,
+        terminateLoading: true,
+        withAvatar: true,
+      }
+    );
+
+    this.addMessageToState(message);
+  }
+  handleIntroduce5 = () => {
+    const message = this.createChatBotMessage(
+      "Tôi có thể gợi ý một tour có thể bạn sẽ thích. SANDALS GRANDE ANTIGUA RESORT & SPA",
+      {
+        widget: "viewresort",
+        loading: true,
+        terminateLoading: true,
+        withAvatar: true,
+      }
+    );
+
+    this.addMessageToState(message);
+  }
+
+  handleIntroduction6 = () => {
+    const message = this.createChatBotMessage(
+      "SANDALS GRANDE ANTIGUA RESORT & SPA chỉ $242.23.",
+      {
+        widget: "viewresort1",
+        loading: true,
+        terminateLoading: true,
+        withAvatar: true,
+      }
+    );
+
+    this.addMessageToState(message);
+  }
+
   addMessageToState = (message) => {
     this.setState((state) => ({
       ...state,

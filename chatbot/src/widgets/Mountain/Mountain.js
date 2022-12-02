@@ -4,7 +4,7 @@ const Mountain = (props) => {
   const options = [
     {
       id: 1,
-      name: "Xem tour",
+      name: "Chi tiết tour",
       handler: props.actionProvider.handleOrderExplore,
     },
     {

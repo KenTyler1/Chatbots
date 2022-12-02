@@ -73,8 +73,6 @@ router.patch("/:listId", async (req, res) => {
   }
 });
 
-// router.get("/specificed" ,(req,res) => {
-//     res.send("<h1>Post specificied</h1>")
-// });
+
 
 module.exports = router;
