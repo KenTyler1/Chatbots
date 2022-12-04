@@ -1,12 +1,19 @@
-import Register from "../../components/register/Register";
-import './Register.css';
+import Login from "../../components/login/login_component";
+
+import "./style.css";
 
 function LoginLayout() {
-    return ( 
-        <main className="Appler">
-            <Register/>
-        </main>
-     );
+  return (
+    <div className="body-applest">
+      <div className="Applest">
+        <div className="auth-wrapper">
+          <div className="auth-inner">
+            <Login />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default LoginLayout;

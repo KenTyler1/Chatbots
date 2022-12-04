@@ -8,8 +8,6 @@ const colors = {
     
 };
 
-
-
 function App() {
   const [hoverValue, setHoverValue] = useState(undefined);
   const stars = Array(5).fill(0)
@@ -33,7 +31,7 @@ function App() {
       },
     });
     result = await result.json();
-    alert("Data has been saved");
+    alert("Cám ơn bạn vì đã góp ý để chúng tôi phát triển hơn.");
   }
 
   const handleClick = value => {

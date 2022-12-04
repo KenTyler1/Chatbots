@@ -11,7 +11,6 @@ import { publicRoutes } from "./routes/routes";
 import DefaultLayout from "./layouts/DefaultLayout";
 import { Fragment } from "react";
 import { DataProvider } from "./components/cart/DataProvider";
-
 import "./App.css";
 
 function App() {

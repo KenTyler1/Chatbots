@@ -6,6 +6,9 @@ const cors = require('cors');
 
 //Middlewares
 app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.set("view engine", "ejs");
 
 //Body-parser
 const bodyParser = require('body-parser');
@@ -15,9 +18,11 @@ app.use(bodyParser.json());
 const postsRoute = require('./routes/posts');
 const listRoute = require('./routes/lists');
 const ratingRoute = require('./routes/rating');
+const registerRoute = require('./routes/register');
 app.use('/posts',postsRoute);
 app.use('/lists', listRoute);
 app.use('/rating', ratingRoute);
+app.use('/register', registerRoute);
 
 const Lists = require("./models/List");
 // Connect to DB

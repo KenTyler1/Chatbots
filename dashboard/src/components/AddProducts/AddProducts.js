@@ -48,7 +48,7 @@ export default function AddProducts() {
         age,
         phone,
         ticket,
-        tour
+        tour,
       }),
       headers: {
         "Content-Type": "application/json",
@@ -141,7 +141,7 @@ export default function AddProducts() {
           value={ticket}
           onChange={(e) => setTicket(e.target.value)}
         />
-        <br/>
+        <br />
         <input
           type="text"
           className="form-control"
@@ -149,7 +149,7 @@ export default function AddProducts() {
           value={tour}
           onChange={(e) => setTour(e.target.value)}
         />
-        <br/>
+        <br />
         <button className="btn btn-primary" onClick={addProduct}>
           Add Tours
         </button>
@@ -158,8 +158,7 @@ export default function AddProducts() {
         to="/"
         style={{ textDecoration: "none", color: "black", marginLeft: 480 }}
       >
-        <BsFillArrowLeftCircleFill />
-        Back to dashboard
+        <BsFillArrowLeftCircleFill /> &nbsp; Back to dashboard
       </Link>
     </div>
   );

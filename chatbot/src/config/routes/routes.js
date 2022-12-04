@@ -3,7 +3,10 @@ const routes = {
     products: '/products',
     products_id:'/products/:id',
     cart: '/cart',
-    login: '/login'
+    login: '/sign-in',
+    signup: '/sign-up',
+    userdetail: '/userDetails',
+    resetpass: 'reset'
 };
 
 export default routes;
