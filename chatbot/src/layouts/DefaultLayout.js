@@ -9,6 +9,7 @@ import Search from "../components/search/Search";
 import Selects from "../components/selects/Selects";
 
 function DefaultLayout() {
+
   return (
     <div>
       <Navbar />

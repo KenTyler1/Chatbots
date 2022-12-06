@@ -248,13 +248,21 @@ ul li{
   color: crimson;
   padding: 0 20px;
 }
-.amount .count{
+.amount .count1{
   width: 40px;
   height: 30px;
-  border: 1px solid #555;
+  border: 1px solid rgb(69, 155, 235);
   outline: none;
-  background: #555;
+  background: rgb(69, 155, 235);
   cursor: pointer;
+  padding: 0px;
+  margin: auto;
+}
+
+.amount .count1:hover{
+  background: rgb(69, 233, 105);
+  color: #333;
+  border: none;
 }
 .delete{
   position: absolute;

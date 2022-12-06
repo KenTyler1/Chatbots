@@ -36,10 +36,11 @@ export default class Login extends Component {
         if (data.status === "ok") {
           alert("Đăng nhập thành công");
           window.localStorage.setItem("token", data.data);
-          window.location.href = "./userDetails";
+          window.location.href = "./";
         }
       });
   }
+
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
@@ -77,7 +78,6 @@ export default class Login extends Component {
             </a>
           </div>
         </div>
-
         <GoogleLogin
           onSuccess={(credentialResponse) => {
             console.log(credentialResponse.credential);
@@ -87,9 +87,10 @@ export default class Login extends Component {
           onError={() => {
             console.log("Login Failed");
           }}
+          useOneTap
+          // auto_select
         />
-
-        <div className="d-grid" style={{marginTop: 20}}>
+        <div className="d-grid" style={{ marginTop: 20 }}>
           <button type="submit" className="btn btn-primary">
             Submit
           </button>

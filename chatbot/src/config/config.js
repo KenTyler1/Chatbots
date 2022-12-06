@@ -27,7 +27,9 @@ import ViewResort from "../widgets/Confirm/Resort/PreViewResort/ViewResort/ViewR
 import PreRisky from "../widgets/Confirm/PreRisky/PreRisky";
 import Recommend1 from "../widgets/Confirm/PreRisky/Recommend/Recommend";
 
+
 const config = {
+  
   initialMessages: [
     createChatBotMessage(
       `Chào mừng bạn đến với BEACHES. Nơi sẽ giúp cho chuyến đi du lịch của bạn trở nên dễ dàng và vui vẻ hơn.`

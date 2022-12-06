@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { BiSearch } from "react-icons/bi";
 import { BsPerson } from "react-icons/bs";
 import { HiOutlineMenuAlt4 } from "react-icons/hi";
@@ -10,20 +10,46 @@ import {
   FaTwitter,
   FaYoutube,
 } from "react-icons/fa";
-
 import { Link } from "react-scroll";
 import { Link as Links } from "react-router-dom";
 
 import "./NavbarStyles.css";
 
-function Navbar() {
+function Navbars() {
   const [nav, setNav] = useState(false);
   const handleNav = () => setNav(!nav);
+
+  const [userData, setUserData] = useState("");
+
+  useEffect(() => {
+    fetch("http://localhost:8000/register/userData", {
+      method: "POST",
+      crossDomain: true,
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        "Access-Control-Allow-Origin": "*",
+      },
+      body: JSON.stringify({
+        token: window.localStorage.getItem("token"),
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data, "userData");
+        setUserData(data.data);
+      });
+  }, []);
+
+  const logOut = () => {
+    localStorage.clear();
+    window.location.href = "/";
+  };
 
   return (
     <div name="home" className={nav ? "navbar navbar-bg" : "navbar"}>
       <div className={nav ? "logo dark" : "logo"}>
-        <h2>BEACHES.</h2>
+        <h2>BEACHES</h2>
       </div>
       <ul className="nav-menu">
         <Link to="hero" smooth={true} duration={500}>
@@ -45,9 +71,24 @@ function Navbar() {
           <li>Tours list</li>
         </Links>
       </ul>
-      <div className="nav-icons">
+      <div className="nav-icons" style={{ display: "flex" }}>
         <BiSearch className="icon" style={{ marginRight: "1rem" }} />
-        <Links to='/sign-in'><BsPerson className="icon" /></Links>
+        {userData ? (
+          <div class="top-menu-items">
+            <ul>
+              <li style={{textTransform: 'none'}}>
+                {userData.fname}
+                <ul class="top-menu-item">
+                  <li onClick={logOut}>Logout</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        ) : (
+          <Links to="/sign-in">
+            <BsPerson className="icon" />
+          </Links>
+        )}
       </div>
       <div className="hamburger" onClick={handleNav}>
         {!nav ? (
@@ -96,4 +137,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export default Navbars;
