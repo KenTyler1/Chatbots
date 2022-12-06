@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { BsFillArrowLeftCircleFill } from "react-icons/bs";
+import { GoogleLogin } from "@react-oauth/google";
+import jwt_decode from "jwt-decode";
 
 export default class Login extends Component {
   constructor(props) {
@@ -10,6 +12,7 @@ export default class Login extends Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
+
   handleSubmit(e) {
     e.preventDefault();
     const { email, password } = this.state;
@@ -41,7 +44,6 @@ export default class Login extends Component {
     return (
       <form onSubmit={this.handleSubmit}>
         <h3>Đăng Nhập</h3>
-
         <div className="mb-3">
           <label>Địa chỉ email</label>
           <input
@@ -51,7 +53,6 @@ export default class Login extends Component {
             onChange={(e) => this.setState({ email: e.target.value })}
           />
         </div>
-
         <div className="mb-3">
           <label>Password</label>
           <input
@@ -61,7 +62,6 @@ export default class Login extends Component {
             onChange={(e) => this.setState({ password: e.target.value })}
           />
         </div>
-
         <div className="mb-3">
           <div className="custom-control custom-checkbox">
             <input
@@ -72,13 +72,24 @@ export default class Login extends Component {
             <label className="custom-control-label" htmlFor="customCheck1">
               Nhớ tôi &nbsp;
             </label>
-            <a href="/reset" style={{ textTransform: 'none'}}>
+            <a href="/reset" style={{ textTransform: "none" }}>
               Quên mật khẩu
             </a>
           </div>
         </div>
 
-        <div className="d-grid">
+        <GoogleLogin
+          onSuccess={(credentialResponse) => {
+            console.log(credentialResponse.credential);
+            var decoded = jwt_decode(credentialResponse.credential);
+            console.log(decoded);
+          }}
+          onError={() => {
+            console.log("Login Failed");
+          }}
+        />
+
+        <div className="d-grid" style={{marginTop: 20}}>
           <button type="submit" className="btn btn-primary">
             Submit
           </button>

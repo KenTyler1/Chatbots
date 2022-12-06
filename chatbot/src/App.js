@@ -14,6 +14,7 @@ import { DataProvider } from "./components/cart/DataProvider";
 import "./App.css";
 
 function App() {
+  
   const [state, setState] = useState(false);
 
   const handleShowBot = () => {

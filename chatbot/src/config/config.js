@@ -14,8 +14,8 @@ import Recommend from "../widgets/Confirm/Plan/Recommend/Recommend";
 import Rating from "../widgets/Rating/Rating";
 import Beaches from "../widgets/Sea/Sea";
 import Mountain from "../widgets/Mountain/Mountain";
-import DeliveryLink from "../widgets/Link/DeliveryLink"; 
-import Story from '../widgets/Story/Story';
+import DeliveryLink from "../widgets/Link/DeliveryLink";
+import Story from "../widgets/Story/Story";
 import MoreStory from "../widgets/Story/More/MoreStory";
 import Continue from "../widgets/Story/More/Continue/Continue";
 import PreExplore from "../widgets/Confirm/PreExplore/PreExplore";
@@ -29,12 +29,20 @@ import Recommend1 from "../widgets/Confirm/PreRisky/Recommend/Recommend";
 
 const config = {
   initialMessages: [
-    createChatBotMessage(`Chào mừng bạn đến với BEACHES. Nơi sẽ giúp cho chuyến đi du lịch của bạn trở nên dễ dàng và vui vẻ hơn.`),
-    createChatBotMessage(`Tôi xin tự giới thiệu, tôi là CrazyBot. Một trí tuệ nhân tạo được BEACHES tạo ra nhằm mục đích hỗ trợ bạn 24/7.`),
+    createChatBotMessage(
+      `Chào mừng bạn đến với BEACHES. Nơi sẽ giúp cho chuyến đi du lịch của bạn trở nên dễ dàng và vui vẻ hơn.`
+    ),
+    createChatBotMessage(
+      `Tôi xin tự giới thiệu, tôi là CrazyBot. Một trí tuệ nhân tạo được BEACHES tạo ra nhằm mục đích hỗ trợ bạn 24/7.`,
+      {
+        withAvatar: true,
+        delay: 400,
+      }
+    ),
     createChatBotMessage(
       "Bạn đã chuẩn bị gì cho 1 chuyến đi du lịch đầy niềm vui và ấm áp này chưa ?",
       {
-        withAvatar: false,
+        withAvatar: true,
         delay: 400,
         widget: "overview",
       }
@@ -94,11 +102,11 @@ const config = {
     },
     {
       widgetName: "beaches",
-      widgetFunc: (props) => <PreviousSea {...props}/>,
+      widgetFunc: (props) => <PreviousSea {...props} />,
     },
     {
       widgetName: "mountain",
-      widgetFunc: (props) => <PreviousMountain {...props}/>,
+      widgetFunc: (props) => <PreviousMountain {...props} />,
     },
     {
       widgetName: "viewproducts",
@@ -107,7 +115,7 @@ const config = {
     {
       widgetName: "story",
       widgetFunc: (props) => <Story {...props} />,
-    },    
+    },
     {
       widgetName: "morestory",
       widgetFunc: (props) => <MoreStory {...props} />,
@@ -123,7 +131,7 @@ const config = {
     {
       widgetName: "introduction1",
       widgetFunc: (props) => <Resort {...props} />,
-    },  
+    },
     {
       widgetName: "introduction2",
       widgetFunc: (props) => <Beaches {...props} />,
@@ -135,7 +143,7 @@ const config = {
     {
       widgetName: "viewresort",
       widgetFunc: (props) => <PreViewResort {...props} />,
-    },    
+    },
     {
       widgetName: "introresort",
       widgetFunc: (props) => <ViewResort {...props} />,

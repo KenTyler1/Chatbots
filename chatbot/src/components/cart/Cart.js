@@ -36,7 +36,7 @@ export default function Cart() {
   };
 
   const removeProduct = (id) => {
-    if (window.confirm("Do you want to delete this product?")) {
+    if (window.confirm("Bạn có muốn xóa tour du lịch này ?")) {
       cart.forEach((item, index) => {
         if (item._id === id) {
           cart.splice(index, 1);
@@ -48,7 +48,7 @@ export default function Cart() {
 
   if (cart.length === 0)
     return (
-      <h2 style={{ textAlign: "center", fontSize: "5rem" }}>Cart Empty</h2>
+      <h5 style={{ textAlign: "center", fontSize: "5rem" }}>Giỏ hàng trống </h5>
     );
 
   return (
@@ -61,12 +61,33 @@ export default function Cart() {
           />
 
           <div className="box-details">
-            <h2 title={product.title}>{product.title}</h2>
-            <h3>${product.price}</h3>
+          <h2 title={product.title}>{product.title}</h2>
+            <h3>${product.price} một người</h3>
+            <h4>Khoảng thời gian: {product.time}</h4>
+            <h4>Tuổi: {product.age}</h4>
             <Sizes sizes={product.sizes} />
+            <div
+              className="date"
+              style={{ display: "flex", justifyContent: "center" }}
+            >
+              <div className="input-wrap">
+                <label>Check-In</label>
+                <input type="date" />
+              </div>
+              <div className="input-wrap">
+                <label>Check-Out</label>
+                <input type="date" />
+              </div>
+            </div>
             <p>{product.description}</p>
-            <p>{product.content}</p>
-
+            <u>
+              <b>
+                <p>{product.content}</p>
+              </b>
+            </u>
+            <h4>Số điện thoại: {product.phone}</h4> 
+            <h4>Loại vé: {product.ticket}</h4>
+            <h4>Ngôn ngữ: {product.tour}</h4>
             <div className="amount">
               <button className="count" onClick={() => reduction(product._id)}>
                 {" "}

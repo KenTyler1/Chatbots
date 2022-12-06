@@ -49,26 +49,13 @@ export default function Details() {
             <h4>Khoảng thời gian: {product.time}</h4>
             <h4>Tuổi: {product.age}</h4>
             <Sizes sizes={product.sizes} />
-            <div
-              className="date"
-              style={{ display: "flex", justifyContent: "center" }}
-            >
-              <div className="input-wrap">
-                <label>Check-In</label>
-                <input type="date" />
-              </div>
-              <div className="input-wrap">
-                <label>Check-Out</label>
-                <input type="date" />
-              </div>
-            </div>
             <p>{product.description}</p>
             <u>
               <b>
                 <p>{product.content}</p>
               </b>
             </u>
-            <h4>Số điện thoại: {product.phone}</h4> 
+            <h4>Số điện thoại: {product.phone}</h4>
             <h4>Loại vé: {product.ticket}</h4>
             <h4>Ngôn ngữ: {product.tour}</h4>
             <DetailsThumb images={product.images} setIndex={setIndex} />
@@ -77,7 +64,7 @@ export default function Details() {
               className="cart"
               onClick={() => addCart(product._id)}
             >
-              Add to cart
+              Thêm vào giỏ hàng
             </Link>
           </div>
         </div>
