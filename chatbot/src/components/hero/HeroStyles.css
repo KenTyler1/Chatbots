@@ -71,3 +71,18 @@
     background-color: unset;
     border: none;
 }
+
+.search-drop-down {
+    padding: 10px;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+}
+
+.search-drop-down ul li h5 {
+    color: #fff;
+}
+
+.search-drop-down ul li h5:hover {
+    color: aqua;
+}

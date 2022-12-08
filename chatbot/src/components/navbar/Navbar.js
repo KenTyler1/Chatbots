@@ -53,23 +53,20 @@ function Navbars() {
       </div>
       <ul className="nav-menu">
         <Link to="hero" smooth={true} duration={500}>
-          <li>Home</li>
+          <li>Search</li>
         </Link>
         <Link to="destinations" smooth={true} duration={500}>
-          <li>Destinations</li>
+          <li>Suggestions</li>
         </Link>
         <Link to="carousel" smooth={true} duration={500}>
           <li>Travel</li>
         </Link>
         <Link to="search" smooth={true} duration={500}>
-          <li>Book</li>
+          <li>Lists</li>
         </Link>
         <Link to="views" smooth={true} duration={500}>
           <li>Views</li>
         </Link>
-        <Links to="/products">
-          <li>Tours list</li>
-        </Links>
       </ul>
       <div className="nav-icons" style={{ display: "flex" }}>
         <BiSearch className="icon" style={{ marginRight: "1rem" }} />
@@ -101,23 +98,20 @@ function Navbars() {
       <div className={nav ? "mobile-menu active" : "mobile-menu"}>
         <ul className="mobile-nav">
           <Link to="hero" smooth={true} duration={500}>
-            <li>Home</li>
+            <li>Search</li>
           </Link>
           <Link to="destinations" smooth={true} duration={500}>
-            <li>Destinations</li>
+            <li>Suggestions</li>
           </Link>
           <Link to="carousel" smooth={true} duration={500}>
             <li>Travel</li>
           </Link>
           <Link to="search" smooth={true} duration={500}>
-            <li>Book</li>
+            <li>Lists</li>
           </Link>
           <Link to="views" smooth={true} duration={500}>
             <li>Views</li>
           </Link>
-          <Links to="/products">
-            <li>Tours list</li>
-          </Links>
         </ul>
         <div className="mobile-menu-bottom">
           <div className="menu-icons">

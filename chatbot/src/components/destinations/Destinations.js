@@ -1,28 +1,41 @@
-import React from 'react'
-import './DestinationsStyles.css'
-
-import BoraBora from '../../assets/borabora.jpg'
-import BoraBora2 from '../../assets/borabora2.jpg'
-import Maldives from '../../assets/maldives.jpg'
-import Maldives2 from '../../assets/maldives2.jpg'
-import KeyWest from '../../assets/keywest.jpg'
+import React, { useContext, useRef } from "react";
+import "./DestinationsStyles.css";
+import { DataContext } from "../cart/DataProvider";
+import { Link } from "react-router-dom";
 
 function Destinations() {
-    return (
-        <div name='destinations' className='destinations'>
-            <div className="container">
-                <h1>Khu nghỉ dưỡng trọn gói</h1>
-                <p>Trên những bãi biển đẹp nhất của Caribe</p>
-                <div className="img-container">
-                    <img className='span-3 image-grid-row-2' src={BoraBora} alt="/"/>
-                    <img src={BoraBora2} alt="/"/>
-                    <img src={Maldives} alt="/"/>
-                    <img src={Maldives2} alt="/"/>
-                    <img src={KeyWest} alt="/"/>
-                </div>
+  const value = useContext(DataContext);
+  const [products] = value.products;
+
+  return (
+    <div name="destinations" className="destinations">
+      <div className="container">
+        <h1>Tour du lịch giá rẻ nhất</h1>
+        <p>Phù hợp cho mọi lứa tuổi</p>
+        {products.slice(84, 85).map((item) => (
+          <>
+            <div className="img-container" key={item._id}>
+              <img
+                className="span-3 image-grid-row-2"
+                src={item.images[1]}
+                alt="/"
+              />
+              <img src={item.images[2]} alt="/" />
+              <img src={item.images[3]} alt="/" />
+              <img src={item.images[4]} alt="/" />
+              <img src={item.images[5]} alt="/" />
             </div>
-        </div>
-    )
+            <Link
+              to={"/products/" + item._id}
+              style={{ textTransform: "none" }}
+            >
+              <p style={{ fontSize: 20 }}>Khám phá tour du lịch</p>
+            </Link>
+          </>
+        ))}
+      </div>
+    </div>
+  );
 }
 
-export default Destinations
+export default Destinations;

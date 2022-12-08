@@ -12,12 +12,13 @@ export default function Details() {
   const addCart = value.addCart;
 
   const [index, setIndex] = useState(0);
-  const imgDiv = useRef();
-
+  
   const details = products.filter((product, index) => {
     return product._id === id;
   });
-
+  
+  const imgDiv = useRef();
+  
   const handleMouseMove = (e) => {
     const { left, top, width, height } = e.target.getBoundingClientRect();
     const x = ((e.pageX - left) / width) * 100;
