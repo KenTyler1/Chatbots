@@ -1,6 +1,6 @@
 import * as React from "react";
 import { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 export default function UpdateProduct() {
   const [title, setTitle] = useState("");
@@ -11,7 +11,7 @@ export default function UpdateProduct() {
   const [price, setPrice] = useState("");
   const [count, setCount] = useState("");
   const params = useParams();
-  const navigate = useNavigate();
+
 
   useEffect(() => {
     getProductDetails();

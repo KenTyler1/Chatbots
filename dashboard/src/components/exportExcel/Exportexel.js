@@ -23,7 +23,7 @@ function Exportexcel() {
           <div className="col-sm-8">
             <CSVLink
               data={tourdata}
-              filename="RegisterUserData"
+              filename="filename"
               className="btn btn-success mb-3"
             >
               Export Tour Data

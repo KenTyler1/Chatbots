@@ -54,7 +54,9 @@ const Sidebar = () => {
                   style={{ textDecoration: "unset", color: "black" }}
                 >
                   <item.icon />
-                  <span>{item.heading}</span>
+                  <span style={{ fontSize: 15, fontWeight: "bolder" }}>
+                    &nbsp;{item.heading}
+                  </span>
                 </Link>
               </div>
             );

@@ -1,4 +1,4 @@
-import React, { useContext, useRef } from "react";
+import React, { useContext } from "react";
 import "./DestinationsStyles.css";
 import { DataContext } from "../cart/DataProvider";
 import { Link } from "react-router-dom";

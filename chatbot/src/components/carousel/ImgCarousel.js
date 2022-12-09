@@ -4,9 +4,7 @@ import "./ImgCarouselStyles.css";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 
-import BoraBora from "../../assets/borabora.jpg";
-import BoraBora2 from "../../assets/borabora2.jpg";
-import Maldives from "../../assets/maldives.jpg";
+
 import { DataContext } from "../cart/DataProvider";
 import { Link } from "react-router-dom";
 

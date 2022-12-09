@@ -342,7 +342,7 @@ export default function EnhancedTable() {
                         {product.title}
                       </TableCell>
                       <TableCell align="right">{product._id}</TableCell>
-                      <TableCell align="left" height="50">
+                      <TableCell align="left" >
                         {product.description}
                       </TableCell>
                       <TableCell align="right">{product.content}</TableCell>

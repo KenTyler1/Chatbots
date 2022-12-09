@@ -4,6 +4,8 @@ import Close from "../../assets/svg/times-solid.svg";
 import Cart from "../../assets/svg/cart.svg";
 import { Link } from "react-router-dom";
 import { DataContext } from "./DataProvider";
+import { FcHome, FcSearch, FcList } from "react-icons/fc";
+import {RiAccountPinCircleFill} from 'react-icons/ri';
 
 export default function Header() {
   const [menu, setMenu] = useState(false);
@@ -13,7 +15,7 @@ export default function Header() {
   const [userData, setUserData] = value.data;
 
   console.log(setUserData);
-  
+
   const toggleMenu = () => {
     setMenu(!menu);
   };
@@ -35,22 +37,28 @@ export default function Header() {
       </div>
       <ul style={styleMenu}>
         <li>
-          <Link to="/" style={{fontWeight: 'bold'}}>Home</Link>
+          <Link to="/" style={{ fontWeight: "bold" }}>
+            <FcHome /> Home
+          </Link>
         </li>
         <li>
-          <Link to="/" style={{fontWeight: 'bold'}}>Search</Link>
+          <Link to="/" style={{ fontWeight: "bold" }}>
+            <FcSearch /> Search
+          </Link>
         </li>
         <li>
-          <Link to="/products"style={{fontWeight: 'bold'}}>Tours</Link>
+          <Link to="/products" style={{ fontWeight: "bold" }}>
+            <FcList /> Tours
+          </Link>
         </li>
 
         {userData ? (
-          <li style={{fontWeight: 'bold'}}  >
-            {userData.fname}
-          </li>
+          <li style={{ fontWeight: "bold" }}><RiAccountPinCircleFill /> {userData.fname}</li>
         ) : (
           <li>
-            <Link to="/sign-in" style={{fontWeight: 'bold'}}>Login / Register</Link>
+            <Link to="/sign-in" style={{ fontWeight: "bold" }}>
+              <RiAccountPinCircleFill /> Login / Register
+            </Link>
           </li>
         )}
         <li onClick={toggleMenu}>

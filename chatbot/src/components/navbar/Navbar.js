@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { BiSearch } from "react-icons/bi";
-import { BsPerson } from "react-icons/bs";
+import { BsPerson, BsCardList } from "react-icons/bs";
 import { HiOutlineMenuAlt4 } from "react-icons/hi";
 import { AiOutlineClose } from "react-icons/ai";
 import {
@@ -9,8 +9,12 @@ import {
   FaPinterest,
   FaTwitter,
   FaYoutube,
+  FaResearchgate
 } from "react-icons/fa";
+import {MdRecommend} from 'react-icons/md'
+import {IoMdContacts} from 'react-icons/io'
 import { Link } from "react-scroll";
+import {CgMoreVerticalR} from 'react-icons/cg';
 import { Link as Links } from "react-router-dom";
 
 import "./NavbarStyles.css";
@@ -44,7 +48,7 @@ function Navbars() {
   const logOut = () => {
     localStorage.clear();
     localStorage.removeItem("token");
-		window.location.reload();
+    window.location.reload();
   };
 
   return (
@@ -54,19 +58,19 @@ function Navbars() {
       </div>
       <ul className="nav-menu">
         <Link to="hero" smooth={true} duration={500}>
-          <li>Search</li>
+          <li><FaResearchgate/> Search</li>
         </Link>
         <Link to="destinations" smooth={true} duration={500}>
-          <li>Suggestions</li>
+          <li><MdRecommend /> Suggestions</li>
         </Link>
         <Link to="search" smooth={true} duration={500}>
-          <li>Lists</li>
+          <li><BsCardList /> Lists</li>
         </Link>
         <Link to="views" smooth={true} duration={500}>
-          <li>Introduce</li>
+          <li><CgMoreVerticalR /> Introduce</li>
         </Link>
         <Link to="footer" smooth={true} duration={500}>
-          <li>Contact</li>
+          <li><IoMdContacts /> Contact</li>
         </Link>
       </ul>
       <div className="nav-icons" style={{ display: "flex" }}>
@@ -74,7 +78,7 @@ function Navbars() {
         {userData ? (
           <div class="top-menu-items">
             <ul>
-              <li style={{textTransform: 'none'}}>
+              <li style={{ textTransform: "none" }}>
                 {userData.fname}
                 <ul class="top-menu-item">
                   <li onClick={logOut}>Logout</li>
@@ -111,8 +115,8 @@ function Navbars() {
             <li>Introduce</li>
           </Link>
           <Link to="footer" smooth={true} duration={500}>
-          <li>Contact</li>
-        </Link>
+            <li>Contact</li>
+          </Link>
         </ul>
         <div className="mobile-menu-bottom">
           <div className="menu-icons">

@@ -17,6 +17,9 @@ const rows = [
   createData("Big Baza Bang ", 18908424, "2 March 2022", "Pending"),
   createData("Mouth Freshner", 18908424, "2 March 2022", "Approved"),
   createData("Cupcake", 18908421, "2 March 2022", "Delivered"),
+  createData("Cupcake", 18908421, "2 March 2022", "Delivered"),
+  createData("Cupcake", 18908421, "2 March 2022", "Delivered"),
+  createData("Cupcake", 18908421, "2 March 2022", "Delivered"),
 ];
 
 

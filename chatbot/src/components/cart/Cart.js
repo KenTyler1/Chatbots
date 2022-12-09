@@ -2,7 +2,6 @@ import React, { useContext, useState, useEffect } from "react";
 import { DataContext } from "./DataProvider";
 import Sizes from "./Sizes";
 import GooglePayButton from "@google-pay/button-react";
-import { parsePath } from "react-router-dom";
 
 export default function Cart() {
   const value = useContext(DataContext);
