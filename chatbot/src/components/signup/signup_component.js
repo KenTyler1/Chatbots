@@ -50,7 +50,7 @@ export default class SignUp extends Component {
         // SMS sent. Prompt user to type the code from the message, then sign the
         // user in with confirmationResult.confirm(code).
         window.confirmationResult = confirmationResult;
-        alert("otp đã được gửi");
+        alert("Otp đã được gửi");
         this.setState({ verifyOtp: true });
         // ...
       })

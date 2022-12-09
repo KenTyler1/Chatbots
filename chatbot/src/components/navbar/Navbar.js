@@ -43,7 +43,8 @@ function Navbars() {
 
   const logOut = () => {
     localStorage.clear();
-    window.location.href = "/";
+    localStorage.removeItem("token");
+		window.location.reload();
   };
 
   return (
@@ -58,14 +59,14 @@ function Navbars() {
         <Link to="destinations" smooth={true} duration={500}>
           <li>Suggestions</li>
         </Link>
-        <Link to="carousel" smooth={true} duration={500}>
-          <li>Travel</li>
-        </Link>
         <Link to="search" smooth={true} duration={500}>
           <li>Lists</li>
         </Link>
         <Link to="views" smooth={true} duration={500}>
-          <li>Views</li>
+          <li>Introduce</li>
+        </Link>
+        <Link to="footer" smooth={true} duration={500}>
+          <li>Contact</li>
         </Link>
       </ul>
       <div className="nav-icons" style={{ display: "flex" }}>
@@ -103,15 +104,15 @@ function Navbars() {
           <Link to="destinations" smooth={true} duration={500}>
             <li>Suggestions</li>
           </Link>
-          <Link to="carousel" smooth={true} duration={500}>
-            <li>Travel</li>
-          </Link>
           <Link to="search" smooth={true} duration={500}>
             <li>Lists</li>
           </Link>
           <Link to="views" smooth={true} duration={500}>
-            <li>Views</li>
+            <li>Introduce</li>
           </Link>
+          <Link to="footer" smooth={true} duration={500}>
+          <li>Contact</li>
+        </Link>
         </ul>
         <div className="mobile-menu-bottom">
           <div className="menu-icons">

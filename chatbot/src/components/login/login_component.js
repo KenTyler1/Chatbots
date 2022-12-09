@@ -1,7 +1,15 @@
 import React, { Component } from "react";
 import { BsFillArrowLeftCircleFill } from "react-icons/bs";
-import { GoogleLogin } from "@react-oauth/google";
-import jwt_decode from "jwt-decode";
+// import { GoogleLogin } from "@react-oauth/google";
+// import GoogleLogout from "react-google-login";
+
+// import jwt_decode from "jwt-decode";
+import app from "../firebase/firebase_config";
+
+import { getAuth } from "firebase/auth";
+
+const auth = getAuth();
+auth.languageCode = 'it';
 
 export default class Login extends Component {
   constructor(props) {
@@ -73,25 +81,38 @@ export default class Login extends Component {
             <label className="custom-control-label" htmlFor="customCheck1">
               Nhớ tôi &nbsp;
             </label>
-            <a href="/reset" style={{ textTransform: "none" }}>
+            <a href="/reset" style={{ textTransform: "none", marginLeft: 30, fontWeight: "bold"}}>
               Quên mật khẩu
             </a>
           </div>
         </div>
-        <GoogleLogin
+        {/* <GoogleLogin
           onSuccess={(credentialResponse) => {
             console.log(credentialResponse.credential);
             var decoded = jwt_decode(credentialResponse.credential);
-            console.log(decoded);
+            console.log(decoded.email);
           }}
           onError={() => {
             console.log("Login Failed");
           }}
           useOneTap
-          // auto_select
+          auto_select
         />
+        <GoogleLogout
+          buttonText="Logout"
+        ></GoogleLogout>   */}
+
         <div className="d-grid" style={{ marginTop: 20 }}>
-          <button type="submit" className="btn btn-primary">
+          <button type="submit" className="btn btn-primary" onClick={() => {
+            app.createUserWithEmailAndPassword(this.state.email , this.state.password)
+            .then((userCredential)=>{
+                // send verification mail.
+              userCredential.user.sendEmailVerification();
+              app.signOut();
+              alert("Email đã được gửi");
+            })
+            .catch(alert);
+          }}>
             Submit
           </button>
         </div>

@@ -2,6 +2,7 @@ import React, { useContext, useState, useEffect } from "react";
 import { DataContext } from "./DataProvider";
 import Sizes from "./Sizes";
 import GooglePayButton from "@google-pay/button-react";
+import { parsePath } from "react-router-dom";
 
 export default function Cart() {
   const value = useContext(DataContext);
@@ -15,27 +16,27 @@ export default function Cart() {
 
   //HandlerRoom
   const handleIncreaseRoom = () => {
-    setRoom(room => room + 1) 
-  } 
+    setRoom((room) => room + 1);
+  };
   const handleDecreaseRoom = () => {
-    setRoom(room => room - 1)
-  }
+    setRoom((room) => room - 1);
+  };
 
   //Handler Audult
   const handleIncreaseAudult = () => {
-    setAdult(audult => audult + 1) 
-  }
+    setAdult((audult) => audult + 1);
+  };
   const handleDecreaseAdult = () => {
-    setAdult(audult => audult- 1)
-  }
+    setAdult((audult) => audult - 1);
+  };
 
   //Handler Children
   const handleIncreaseChildren = () => {
-    setChildren(children => children + 1) 
-  }
+    setChildren((children) => children + 1);
+  };
   const handleDecreaseChildren = () => {
-    setChildren(children => children - 1)
-  }
+    setChildren((children) => children - 1);
+  };
   useEffect(() => {
     const getTotal = () => {
       const res = cart.reduce((prev, item) => {
@@ -46,22 +47,22 @@ export default function Cart() {
     getTotal();
   }, [cart]);
 
-  const reduction = (id) => {
-    cart.forEach((item) => {
-      if (item._id === id) {
-        item.count === 1 ? (item.count = 1) : (item.count -= 1);
-      }
-    });
-    setCart([...cart]);
-  };
-  const increase = (id) => {
-    cart.forEach((item) => {
-      if (item._id === id) {
-        item.count += 1;
-      }
-    });
-    setCart([...cart]);
-  };
+  // const reduction = (id) => {
+  //   cart.forEach((item) => {
+  //     if (item._id === id) {
+  //       item.count === 1 ? (item.count = 1) : (item.count -= 1);
+  //     }
+  //   });
+  //   setCart([...cart]);
+  // };
+  // const increase = (id) => {
+  //   cart.forEach((item) => {
+  //     if (item._id === id) {
+  //       item.count += 1;
+  //     }
+  //   });
+  //   setCart([...cart]);
+  // };
 
   const removeProduct = (id) => {
     if (window.confirm("Bạn có muốn xóa tour du lịch này ?")) {
@@ -74,6 +75,50 @@ export default function Cart() {
     }
   };
 
+
+  const [address1, setAddress1] = useState("");
+  const [address2, setAddress2] = useState("");
+  const [administrativeArea, setAdministrativeArea] = useState("");
+  const [countryCode, setCountryCode] = useState("");
+  const [locality, setLocality] = useState("");
+  const [fullname, setName] = useState("");
+  const [postalCode, setPostalCode] = useState("");
+
+  console.log( address1, address2,administrativeArea, countryCode,locality, fullname, postalCode );
+
+  // async function addProduct() {
+  //   console.warn(
+  //     title,
+  //     ode,
+  //     address1,
+  //     address2,
+  //     administrativeArea,
+  //     countryCode,
+  //     locality,
+  //     fullname,
+  //     postalCode
+  //   );
+
+  //   let result = await fetch("http://localhost:8000/lists", {
+  //     method: "post",
+  //     body: JSON.stringify({
+  //       title,
+  //       ode,
+  //       address1,
+  //       address2,
+  //       administrativeArea,
+  //       countryCode,
+  //       locality,
+  //       fullname,
+  //       postalCode,
+  //     }),
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //   });
+  //   result = await result.json();
+  //   alert("Booking thành công");
+  // }
   if (cart.length === 0)
     return (
       <h5 style={{ textAlign: "center", fontSize: "5rem" }}>Giỏ hàng trống </h5>
@@ -87,7 +132,6 @@ export default function Cart() {
             className="img-container"
             style={{ backgroundImage: `url(${product.images[0]})` }}
           />
-
           <div className="box-details">
             <h2 title={product.title}>{product.title}</h2>
             <h3>${product.price} một người</h3>
@@ -120,21 +164,33 @@ export default function Cart() {
               >
                 <div>
                   <h4 style={{ paddingTop: 5 }}>Phòng</h4>
-                  <button className="count1" onClick={handleDecreaseRoom}>-</button>
+                  <button className="count1" onClick={handleDecreaseRoom}>
+                    -
+                  </button>
                   <span style={{ paddingTop: 5 }}>{room}</span>
-                  <button className="count1" onClick={handleIncreaseRoom}>+</button>
+                  <button className="count1" onClick={handleIncreaseRoom}>
+                    +
+                  </button>
                 </div>
                 <div>
                   <h4 style={{ paddingTop: 5 }}>Người lớn</h4>
-                  <button className="count1" onClick={handleDecreaseAdult}>-</button>
+                  <button className="count1" onClick={handleDecreaseAdult}>
+                    -
+                  </button>
                   <span style={{ paddingTop: 5 }}>{audult}</span>
-                  <button className="count1" onClick={handleIncreaseAudult}>+</button>
+                  <button className="count1" onClick={handleIncreaseAudult}>
+                    +
+                  </button>
                 </div>
                 <div>
                   <h4 style={{ paddingTop: 5 }}>Trẻ em</h4>
-                  <button className="count1" onClick={handleDecreaseChildren}>-</button>
+                  <button className="count1" onClick={handleDecreaseChildren}>
+                    -
+                  </button>
                   <span style={{ paddingTop: 5 }}>{children}</span>
-                  <button className="count1" onClick={handleIncreaseChildren}>+</button>
+                  <button className="count1" onClick={handleIncreaseChildren}>
+                    +
+                  </button>
                 </div>
               </div>
             )}
@@ -147,7 +203,7 @@ export default function Cart() {
             <h4>Số điện thoại: {product.phone}</h4>
             <h4>Loại vé: {product.ticket}</h4>
             <h4>Ngôn ngữ: {product.tour}</h4>
-            <div className="amount">
+            {/* <div className="amount">
               <button className="count1" onClick={() => reduction(product._id)}>
                 -
               </button>
@@ -155,7 +211,7 @@ export default function Cart() {
               <button className="count1" onClick={() => increase(product._id)}>
                 +
               </button>
-            </div>
+            </div> */}
 
             <div className="delete" onClick={() => removeProduct(product._id)}>
               X
@@ -193,7 +249,7 @@ export default function Cart() {
             transactionInfo: {
               totalPriceStatus: "FINAL",
               totalPriceLabel: "Total",
-              totalPrice: "1",
+              totalPrice: `${total}`,
               currencyCode: "USD",
               countryCode: "US",
             },
@@ -201,17 +257,29 @@ export default function Cart() {
             callbackIntents: ["SHIPPING_ADDRESS", "PAYMENT_AUTHORIZATION"],
           }}
           onLoadPaymentData={(paymentRequest) => {
-            console.log("Success", paymentRequest);
+            console.log("Thành công", paymentRequest);
+            console.warn(
+              setAddress1(paymentRequest.shippingAddress.address1),
+              setAddress2(paymentRequest.shippingAddress.address2),
+              setAdministrativeArea(
+                paymentRequest.shippingAddress.administrativeArea
+              ),
+              setCountryCode(paymentRequest.shippingAddress.countryCode),
+              setLocality(paymentRequest.shippingAddress.locality),
+              setName(paymentRequest.shippingAddress.name),
+              setPostalCode(paymentRequest.shippingAddress.postalCode)
+            );
           }}
           onPaymentAuthorized={(paymentData) => {
-            console.log("Payment Authorised Success", paymentData);
+            console.log("Ủy quyền thanh toán thành công", paymentData);
             return { transactionState: "SUCCESS" };
           }}
           onPaymentDataChanged={(paymentData) => {
-            console.log("On Payment Data Changed", paymentData);
+            console.log("Dữ liệu thanh toán đã thay đổi", paymentData);
+            // console.log(paymentData.Object.apiVersion)
             return {};
           }}
-          existingPaymentMethodRequired="false"
+          existingPaymentMethodRequired="true"
           buttonColor="black"
           buttonType="Buy"
         />

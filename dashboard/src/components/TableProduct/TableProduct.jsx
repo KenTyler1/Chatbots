@@ -24,6 +24,7 @@ import FilterListIcon from "@mui/icons-material/FilterList";
 import { visuallyHidden } from "@mui/utils";
 import { DataContext } from "../../Data/DataProvider";
 import "./TableProduct.css";
+import Exportexcel from "../exportExcel/Exportexel";
 
 function descendingComparator(a, b, orderBy) {
   if (b[orderBy] < a[orderBy]) {
@@ -195,10 +196,11 @@ function EnhancedTableToolbar(props) {
           id="tableTitle"
           component="div"
         >
-          <u>Products</u>
+          <u>Tours list:</u>
         </Typography>
       )}
-
+      <p>Export: </p>
+      <Exportexcel />
       {numSelected > 0 ? (
         <Tooltip title="Delete">
           <IconButton>
@@ -346,7 +348,14 @@ export default function EnhancedTable() {
                       <TableCell align="right">{product.content}</TableCell>
                       <TableCell align="right">${product.price}</TableCell>
                       <TableCell align="right">{product.count}</TableCell>
-                      <TableCell align="right"><img src={product.images[0]} width="100" height="100" alt={product.title}/></TableCell>
+                      <TableCell align="right">
+                        <img
+                          src={product.images[0]}
+                          width="100"
+                          height="100"
+                          alt={product.title}
+                        />
+                      </TableCell>
                     </TableRow>
                   );
                 })}

@@ -3,7 +3,6 @@ import Menu from "../../assets/svg/bars-solid.svg";
 import Close from "../../assets/svg/times-solid.svg";
 import Cart from "../../assets/svg/cart.svg";
 import { Link } from "react-router-dom";
-import { Link as Links } from "react-scroll";
 import { DataContext } from "./DataProvider";
 
 export default function Header() {
@@ -36,24 +35,22 @@ export default function Header() {
       </div>
       <ul style={styleMenu}>
         <li>
-          <Link to="/">Home</Link>
+          <Link to="/" style={{fontWeight: 'bold'}}>Home</Link>
         </li>
         <li>
-          <Link to="/products">Tours</Link>
+          <Link to="/" style={{fontWeight: 'bold'}}>Search</Link>
         </li>
         <li>
-          <Links to="footer">About</Links>
+          <Link to="/products"style={{fontWeight: 'bold'}}>Tours</Link>
         </li>
-        <li>
-          <Links to="footer">Contact</Links>
-        </li>
+
         {userData ? (
-          <li>
-            {userData.fname} 
+          <li style={{fontWeight: 'bold'}}  >
+            {userData.fname}
           </li>
         ) : (
           <li>
-            <Link to="/sign-in">Login / Register</Link>
+            <Link to="/sign-in" style={{fontWeight: 'bold'}}>Login / Register</Link>
           </li>
         )}
         <li onClick={toggleMenu}>

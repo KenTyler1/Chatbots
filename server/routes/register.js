@@ -1,10 +1,12 @@
 const express = require("express");
 const router = express.Router();
-const bcrypt = require('bcryptjs');
+const bcrypt = require("bcryptjs");
 const Registers = require("../models/Register");
 const jwt = require("jsonwebtoken");
 const JWT_SECRET =
-"hvdvay6ert72839289()aiyg8t87qt72393293883uhefiuh78ttq3ifi78272jbkj?[]]pou89ywe";
+  "hvdvay6ert72839289()aiyg8t87qt72393293883uhefiuh78ttq3ifi78272jbkj?[]]pou89ywe";
+var nodemailer = require("nodemailer");
+
 //Get back all the drops
 
 router.get("/", async (req, res) => {
@@ -18,14 +20,14 @@ router.get("/", async (req, res) => {
 
 //Submit a post
 router.post("/", async (req, res) => {
-  const {fname, lname, email, password} = req.body;
+  const { fname, lname, email, password } = req.body;
   const encryptedPassword = await bcrypt.hash(password, 10);
 
   try {
-    const oldUser = await Registers.findOne({email});
+    const oldUser = await Registers.findOne({ email });
 
-    if(oldUser) {
-      return res.json({error: 'User Exists'});
+    if (oldUser) {
+      return res.json({ error: "User Exists" });
     }
     await Registers.create({
       fname,
@@ -33,7 +35,7 @@ router.post("/", async (req, res) => {
       email,
       password: encryptedPassword,
     });
-    res.json({ status: "ok"});
+    res.json({ status: "ok" });
   } catch (error) {
     res.json({ status: "Error" });
   }
@@ -59,29 +61,27 @@ router.post("/login-user", async (req, res) => {
   res.json({ status: "error", error: "InvAlid Password" });
 });
 
-
 router.post("/userData", async (req, res) => {
-  const {token} = req.body;
+  const { token } = req.body;
   try {
     const user = jwt.verify(token, JWT_SECRET);
     console.log(user);
 
     const useremail = user.email;
-    Registers.findOne({email: useremail})
-    .then((data) => {
-      res.send({status: "ok", data: data});
-    })
-    .catch((error)=> {
-      res.send({status: "error", data: error});
-    });
-    
-  }catch(error) {}
+    Registers.findOne({ email: useremail })
+      .then((data) => {
+        res.send({ status: "ok", data: data });
+      })
+      .catch((error) => {
+        res.send({ status: "error", data: error });
+      });
+  } catch (error) {}
 });
 
 router.post("/forgot-password", async (req, res) => {
   const { email } = req.body;
   try {
-    const oldUser = await Registers.findOne ({ email });
+    const oldUser = await Registers.findOne({ email });
     if (!oldUser) {
       return res.json({ status: "User Not Exists!!" });
     }
@@ -90,18 +90,18 @@ router.post("/forgot-password", async (req, res) => {
       expiresIn: "5m",
     });
     const link = `http://localhost:8000/register/reset-password/${oldUser._id}/${token}`;
-    console.log(link);
+
     var transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: "adarsh438tcsckandivali@gmail.com",
-        pass: "rmdklolcsmswvyfw",
+        user: "tonykhanh999@gmail.com",
+        pass: "sxakhbnomloapait",
       },
     });
 
     var mailOptions = {
       from: "youremail@gmail.com",
-      to: "thedebugarena@gmail.com",
+      to: "tonykhanh999@gmail.com",
       subject: "Password Reset",
       text: link,
     };
@@ -113,6 +113,7 @@ router.post("/forgot-password", async (req, res) => {
         console.log("Email sent: " + info.response);
       }
     });
+
     console.log(link);
   } catch (error) {}
 });
@@ -156,7 +157,6 @@ router.post("/reset-password/:id/:token", async (req, res) => {
         },
       }
     );
-    
 
     res.render("index", { email: verify.email, status: "verified" });
   } catch (error) {
@@ -191,7 +191,7 @@ router.get("/:registerId", async (req, res) => {
 //     const id = req.params.registerId;
 //     const updates = req.body;
 //     const options = {new: true}
-    
+
 //     const result = await Lists.findByIdAndUpdate(id, updates, options);
 
 //     res.json(result);
@@ -199,7 +199,5 @@ router.get("/:registerId", async (req, res) => {
 //     res.json({ message: err });
 //   }
 // });
-
-
 
 module.exports = router;
