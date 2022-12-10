@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useContext } from "react";
 import { BiSearch } from "react-icons/bi";
 import { BsPerson, BsCardList } from "react-icons/bs";
 import { HiOutlineMenuAlt4 } from "react-icons/hi";
@@ -16,34 +16,15 @@ import {IoMdContacts} from 'react-icons/io'
 import { Link } from "react-scroll";
 import {CgMoreVerticalR} from 'react-icons/cg';
 import { Link as Links } from "react-router-dom";
+import { DataContext } from "../cart/DataProvider";
 
 import "./NavbarStyles.css";
 
 function Navbars() {
   const [nav, setNav] = useState(false);
   const handleNav = () => setNav(!nav);
-
-  const [userData, setUserData] = useState("");
-
-  useEffect(() => {
-    fetch("http://localhost:8000/register/userData", {
-      method: "POST",
-      crossDomain: true,
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-        "Access-Control-Allow-Origin": "*",
-      },
-      body: JSON.stringify({
-        token: window.localStorage.getItem("token"),
-      }),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data, "userData");
-        setUserData(data.data);
-      });
-  }, []);
+  const value = useContext(DataContext);
+  const [userData] = value.data;
 
   const logOut = () => {
     localStorage.clear();
@@ -64,10 +45,10 @@ function Navbars() {
           <li><MdRecommend /> Suggestions</li>
         </Link>
         <Link to="search" smooth={true} duration={500}>
-          <li><BsCardList /> Lists</li>
+          <li><CgMoreVerticalR /> Introduce</li>
         </Link>
         <Link to="views" smooth={true} duration={500}>
-          <li><CgMoreVerticalR /> Introduce</li>
+          <li><BsCardList />Tours list</li>
         </Link>
         <Link to="footer" smooth={true} duration={500}>
           <li><IoMdContacts /> Contact</li>
@@ -109,10 +90,10 @@ function Navbars() {
             <li>Suggestions</li>
           </Link>
           <Link to="search" smooth={true} duration={500}>
-            <li>Lists</li>
+            <li>Introduce</li>
           </Link>
           <Link to="views" smooth={true} duration={500}>
-            <li>Introduce</li>
+            <li>Tours list</li>
           </Link>
           <Link to="footer" smooth={true} duration={500}>
             <li>Contact</li>
