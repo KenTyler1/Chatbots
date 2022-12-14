@@ -90,7 +90,7 @@ router.post("/forgot-password", async (req, res) => {
       expiresIn: "5m",
     });
     const link = `http://localhost:8000/register/reset-password/${oldUser._id}/${token}`;
-
+    console.log(oldUser.email);
     var transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
@@ -101,7 +101,7 @@ router.post("/forgot-password", async (req, res) => {
 
     var mailOptions = {
       from: "youremail@gmail.com",
-      to: "tonykhanh999@gmail.com",
+      to: oldUser.email,
       subject: "Password Reset",
       text: link,
     };

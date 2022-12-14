@@ -275,7 +275,7 @@ export default function Cart() {
             buttonColor="black"
             buttonType="Buy"
           />
-          <button type="submit">Payment</button>
+          <button type="submit">Đặt hàng</button>
           <h3>Total: $ {total}</h3>
         </div>
       </form>
