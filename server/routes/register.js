@@ -103,7 +103,7 @@ router.post("/forgot-password", async (req, res) => {
       from: "youremail@gmail.com",
       to: oldUser.email,
       subject: "Password Reset",
-      text: link,
+      text: "Click vào để đổi mật khẩu " + `${link}`,
     };
 
     transporter.sendMail(mailOptions, function (error, info) {
