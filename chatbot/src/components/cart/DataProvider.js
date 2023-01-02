@@ -52,7 +52,7 @@ export const DataProvider = (props) => {
             })
             setCart([...cart, ...data])
         }else{
-            alert("The product has been added to cart.")
+            alert("Tour du lịch đã được thêm vào giỏ hàng")
         }
     }
 

@@ -26,6 +26,9 @@ import PreViewResort from "../widgets/Confirm/Resort/PreViewResort/PreViewResort
 import ViewResort from "../widgets/Confirm/Resort/PreViewResort/ViewResort/ViewResort";
 import PreRisky from "../widgets/Confirm/PreRisky/PreRisky";
 import Recommend1 from "../widgets/Confirm/PreRisky/Recommend/Recommend";
+import Hello from '../widgets/Hello/Hello';
+import OrderTour from '../widgets/OrderTour/OrderTour';
+
 
 const config = {
   
@@ -156,6 +159,14 @@ const config = {
     {
       widgetName: "viewresort1",
       widgetFunc: (props) => <Recommend1 {...props} />,
+    },
+    {
+      widgetName: "hello",
+      widgetFunc: (props) => <Hello {...props} />,
+    },
+    {
+      widgetName: "dattour",
+      widgetFunc: (props) => <OrderTour {...props} />,
     },
   ],
   botName: "Crazy Bot",

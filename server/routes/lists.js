@@ -73,6 +73,21 @@ router.patch("/:listId", async (req, res) => {
   }
 });
 
+router.put("/:listId", async (req, res) => {
+  try {
+    const id = req.params.listId;
+    const updates = req.body;
+    const options = {new: true}
+    
+    const result = await Lists.findByIdAndUpdate(id, updates, options);
+
+    res.json(result);
+  } catch (err) {
+    res.json({ message: err });
+  }
+});
+
+
 
 
 module.exports = router;

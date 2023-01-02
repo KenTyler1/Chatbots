@@ -33,7 +33,7 @@ class MessageParser {
       message.includes("chào") ||
       message.includes("bonjour") 
     ) {
-      return this.actionProvider.handleWelcome();
+      return this.actionProvider.handleWelcome1();
     }    
     else if (
       message.includes("không") ||
@@ -103,6 +103,12 @@ class MessageParser {
       message.includes("ty")
     ) {
       return this.actionProvider.handleRating();
+    }
+    else if (
+      message.includes("đặt") ||
+      message.includes("order")
+    ) {
+      return this.actionProvider.handleOrderTours();
     }
     else {
       return this.actionProvider.handleJoke();

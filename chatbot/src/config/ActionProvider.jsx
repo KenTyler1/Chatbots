@@ -142,6 +142,20 @@ class ActionProvider {
     this.addMessageToState(message);
   };
 
+
+  handleWelcome1 = () => {
+    const message = this.createChatBotMessage("Xin chào, tôi là Trợ lý ảo của bạn 👋. Tên là Crazy Bot",
+      {
+        widget: "hello",
+        loading: true,
+        terminateLoading: true,
+        withAvatar: true,
+      }
+    );
+
+    this.addMessageToState(message);
+  };
+
   handleConfirm = () => {
     const message = this.createChatBotMessage(
       "Thật tuyệt vời! Chúc bạn có một chuyến đi đầy thú vị. BEACHES xin gửi bản tham khảo thêm một vài địa điểm nha",
@@ -338,7 +352,7 @@ class ActionProvider {
 
   handleNo = () => {
     const message = this.createChatBotMessage(
-      "Cảm ơn Quý khách ! Khi nào cần sự hỗ trợ từ BEACHES thì liên hệ với chúng mình nha. Yêu thương !",
+      "Cảm ơn bạn ! Khi nào cần sự hỗ trợ từ BEACHES thì liên hệ với chúng mình nha. Yêu thương !",
       {
         loading: true,
         terminateLoading: true,
@@ -444,6 +458,22 @@ class ActionProvider {
 
     this.addMessageToState(message);
   }
+
+  handleOrderTours = () => {
+    const message = this.createChatBotMessage(
+      "Mỗi chuyển đi khác nhau sẽ mang lại cảm xúc khác nhau. ",
+      {
+        widget: "dattour",
+        loading: true,
+        terminateLoading: true,
+        withAvatar: true,
+      }
+    );
+
+    this.addMessageToState(message);
+
+  }
+
 
   addMessageToState = (message) => {
     this.setState((state) => ({
